@@ -4,7 +4,6 @@ import { RequestData } from "@/lib/api/adapter";
 import { ApiAdapter } from "@/lib/api/adapter";
 import { SLink } from "@/models/SLink";
 import { binary_to_base58} from 'base58-js'
-import dbConnect from '@/lib/db/mongo'
 
 const BASE_URL = process.env.BASE_URL || 'http://localhost:3000'
 
@@ -61,7 +60,6 @@ const controller = async (request: RequestData): Promise<ResponseType> => {
   const shortLink = `${BASE_URL}/${code}`
 
   console.log('creating', code, data.fullLink)
-  await dbConnect()
   const slink = new SLink({
     code,
     full_link: data.fullLink,
