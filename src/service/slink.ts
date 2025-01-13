@@ -18,7 +18,8 @@ export async function generateSLink(fullLink: string): Promise<ResponseType | nu
 }
 
 export async function getSLink(code: string): Promise<GetResponseType | null> {
-  const apiUrl = `/api/slink?code=${encodeURIComponent(code)}`
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || ''
+  const apiUrl = `${baseUrl}/api/slink?code=${encodeURIComponent(code)}`
 
   try {
     const response = await axios.get(apiUrl)
