@@ -1,5 +1,6 @@
 'use client'
 import { useEffect } from 'react'
+import { FaFacebook } from 'react-icons/fa'
 
 export default function FacebookPage() {
   useEffect(() => {
@@ -18,8 +19,11 @@ export default function FacebookPage() {
   }, [])
 
   return (
-    <div>
-      <div id="fb-root"></div>
+    <div className='flex flex-col gap-4'>
+      <div className='flex flex-row items-center justify-center gap-2 w-[400px]'>
+        <FaFacebook className='text-2xl text-blue-500' />
+        <h1 className='text-2xl font-bold text-center'>Facebook</h1>
+      </div>
       <div 
         className="fb-page" 
         data-href="https://www.facebook.com/arakoai"

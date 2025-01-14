@@ -1,5 +1,6 @@
 'use client'
 import { useEffect } from 'react'
+import { FaInstagram } from 'react-icons/fa'
 
 export default function InstagramProfile() {
   useEffect(() => {
@@ -17,7 +18,11 @@ export default function InstagramProfile() {
   }, [])
 
   return (
-    <>
+    <div className='flex flex-col gap-4'>
+      <div className='flex flex-row items-center justify-center gap-2'>
+        <FaInstagram className='text-2xl text-black' />
+        <h1 className='text-2xl font-bold text-center'>Instagram</h1>
+      </div>
       <blockquote
         className="instagram-media"
         data-instgrm-permalink="https://www.instagram.com/arako.ai/"
@@ -37,6 +42,6 @@ export default function InstagramProfile() {
         }}
       >
       </blockquote>
-    </>
+    </div>
   )
 } 

@@ -20,17 +20,17 @@ export default async function Page({ params }: { params: { code: string } }) {
   return (
     <div className='bg-gray-100'>
 
-      <div className='flex flex-col gap-4 py-8 container mx-auto h-screen p-8 relative'>
+      <div className='flex flex-col gap-4 py-8 container mx-auto h-screen p-8 justify-between'>
         <div className='flex flex-col gap-4 text-center'>
           <h1 className='text-2xl font-bold'>Thank you for interesting</h1>
           <p className='text-sm text-gray-500'>Please follow us on social media</p>
         </div>
-        <ScrollArea className='w-full bg-white rounded-lg p-4' >
-          <div className='flex flex-row gap-4 w-full h-[450px]'>
+        <ScrollArea className='w-full bg-white rounded-lg p-4 flex items-center justify-center' >
+          <div className='flex flex-row gap-4 w-full h-[500px] justify-center'>
             <TiktokEmbed />
             <InstagramProfile />
             <FacebookPage />
-            <YouTubeChannel />
+            {/* <YouTubeChannel /> */}
           </div>
           <ScrollBar orientation='horizontal' />
         </ScrollArea>
@@ -40,8 +40,8 @@ export default async function Page({ params }: { params: { code: string } }) {
           </Button>
         </div>
 
-        <div className='flex justify-center absolute bottom-0 w-full text-center text-sm text-gray-500 pb-4'>
-          Powered by <Link href='https://slink.natthapach.com' className='text-blue-500'> SLINK</Link>
+        <div className='flex justify-center w-full text-center text-sm text-gray-500'>
+          Powered by <Link href='https://slink.natthapach.com' className='text-blue-500'>&nbsp;SLINK</Link>
         </div>
       </div>
     </div>
