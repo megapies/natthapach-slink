@@ -2,7 +2,6 @@ import { getSLink } from '@/service/slink'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import FacebookPage from '@/components/FacebookPage'
-import YouTubeChannel from '@/components/YouTubeChannel'
 import InstagramProfile from '@/components/InstagramProfile'
 import TiktokEmbed from '@/components/TiktokEmbed'
 import { Button } from '@/components/ui/button'
@@ -11,14 +10,15 @@ import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 // ในส่วน JSX:
 
 export default async function Page({ params }: { params: { code: string } }) {
-  const result = await getSLink(params.code)
+  const { code } = await params
+  const result = await getSLink(code)
 
   if (!result) {
     redirect('/404')
   }
 
   return (
-    <div className='bg-gray-100'>
+    <div className='min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100'>
 
       <div className='flex flex-col gap-4 py-8 container mx-auto h-screen p-8 justify-between'>
         <div className='flex flex-col gap-4 text-center'>
