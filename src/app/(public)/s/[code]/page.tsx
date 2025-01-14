@@ -7,9 +7,13 @@ import TiktokEmbed from '@/components/TiktokEmbed'
 import { Button } from '@/components/ui/button'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 
-// ในส่วน JSX:
+type Props = {
+  params: Promise<{
+    code: string
+  }>
+}
 
-export default async function Page({ params }: { params: { code: string } }) {
+export default async function Page({ params }: Props) {
   const { code } = await params
   const result = await getSLink(code)
 
